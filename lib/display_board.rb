@@ -2,12 +2,15 @@
 # out the current state.
 def display_board board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
  separator = "-----------"
- row = "   |    |   "
- puts  " #{board[0]} | #{ board[1] } | #{board[2]} "
+
+ build_row(0, 1, 2, board)
  puts separator
- puts  " #{board[3]} | #{ board[4] } | #{board[5]} "
+  build_row(3, 4, 5, board)
  puts separator
- puts  " #{board[6]} | #{ board[7] } | #{board[8]} "
+  build_row(6, 7, 8, board)
 end
 
+def build_row(col1, col2, col3, board)
+  puts  " #{board[col1]} | #{ board[col2] } | #{board[col3]} "
+end
 display_board
